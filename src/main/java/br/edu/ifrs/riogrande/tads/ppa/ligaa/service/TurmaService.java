@@ -35,9 +35,9 @@ public class TurmaService {
     }
 
     public Matricula matricular(String cpf, String codigoTurma) {
-        
         // turma existe?
-        var turma = turmaRepository.findByCodigo(codigoTurma).orElseThrow(() -> new NotFoundException());
+        var turma = turmaRepository.findByCodigo(codigoTurma)
+            .orElseThrow(() -> new NotFoundException());
 
         // turma já terminou o ciclo?
         if (turma.isFechada()) {
@@ -87,16 +87,25 @@ public class TurmaService {
         matricula.setSituacao(Situacao.REGULAR);
         matricula.setAluno(aluno);
         turma.getMatriculas().add(matricula);
+        // persistir
+        System.out.println(matricula);
         return matricula;
     }
 
 
     @PostConstruct
-    void popular() {
+    void popular() { // seed
         var can = alunoRepository.findByCpf("11122233344").orElseThrow();
         var ppa = disciplinaRepository.findByCodigo("ppa").orElseThrow();
         var marcio = professorRepository.findBySiape("1810497").orElseThrow();
         
+        var ppa20232 = new Turma();
+        ppa20232.setCodigo("ppa-2023-2");
+        ppa20232.setDisciplina(ppa);
+        ppa20232.setProfessor(marcio);
+        ppa20232.setSemestre("2023-2");
+        ppa20232.setVagas(10);
+
         var ppa20242 = new Turma();
         ppa20242.setCodigo("ppa-2024-2");
         ppa20242.setDisciplina(ppa);
@@ -108,10 +117,13 @@ public class TurmaService {
         mat.setAluno(can);
         mat.setNumero(++numero);
         mat.setSituacao(Situacao.REPROVADO);
+        ppa20232.getMatriculas().add(mat);
 
-        ppa20242.getMatriculas().add(mat);
-
+        turmaRepository.save(ppa20232);
         turmaRepository.save(ppa20242);
+
+        System.out.println(ppa20232);
+        System.out.println(ppa20242);
     }
 
     

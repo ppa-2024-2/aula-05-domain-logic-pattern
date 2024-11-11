@@ -38,4 +38,10 @@ public class Matricula {
         this.situacao = situacao;
     }
 
+    @Override
+    public String toString() {
+        return "Matricula [numero=" + numero + ", aluno=" + aluno + ", situacao=" + situacao + "]";
+    }
+
+    
 }

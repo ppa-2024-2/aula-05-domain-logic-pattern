@@ -13,6 +13,15 @@ public class Turma {
     private String semestre; // 2024-2
     private String sala;
     private int vagas;
+    private boolean fechada;
+
+    public boolean isFechada() {
+        return fechada;
+    }
+
+    public void setFechada(boolean fechada) {
+        this.fechada = fechada;
+    }
 
     private List<Matricula> matriculas = new ArrayList<>();
 
@@ -72,9 +81,12 @@ public class Turma {
         this.vagas = vagas;
     }
 
-    public boolean isFechada() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'isFechada'");
+
+    @Override
+    public String toString() {
+        return "Turma [codigo=" + codigo + ", disciplina=" + disciplina + ", professor=" + professor + ", semestre="
+                + semestre + ", sala=" + sala + ", vagas=" + vagas + ", matriculas=" + matriculas + "]";
     }
 
+    
 }
