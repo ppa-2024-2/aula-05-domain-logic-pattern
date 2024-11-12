@@ -8,6 +8,7 @@ import java.util.Optional;
 import org.springframework.stereotype.Repository;
 
 import br.edu.ifrs.riogrande.tads.ppa.ligaa.entity.Aluno;
+import br.edu.ifrs.riogrande.tads.ppa.ligaa.entity.Historico;
 import br.edu.ifrs.riogrande.tads.ppa.ligaa.entity.Turma;
 
 @Repository
@@ -37,12 +38,16 @@ public class TurmaRepository implements IRepository<Turma> {
         return Optional.ofNullable(db.get(codigoTurma));
     }
 
-    public List<Turma> findByAluno(Aluno aluno) {
+    private List<Turma> findByAluno(Aluno aluno) {
         return db.values().stream()
             .filter(t -> {
                 return t.getMatriculas().stream()
                     .anyMatch(m -> m.getAluno().equals(aluno));
             }).toList();
+    }
+
+    public Historico findHistorico(Aluno aluno) {
+        return new Historico(aluno, findByAluno(aluno));
     }
     
 }

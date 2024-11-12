@@ -2,6 +2,7 @@ package br.edu.ifrs.riogrande.tads.ppa.ligaa.service;
 
 import org.springframework.stereotype.Service;
 
+import br.edu.ifrs.riogrande.tads.ppa.ligaa.entity.Historico;
 import br.edu.ifrs.riogrande.tads.ppa.ligaa.entity.Matricula;
 import br.edu.ifrs.riogrande.tads.ppa.ligaa.entity.Matricula.Situacao;
 import br.edu.ifrs.riogrande.tads.ppa.ligaa.entity.Turma;
@@ -48,17 +49,25 @@ public class TurmaService {
         var aluno = alunoRepository.findByCpf(cpf)
             .orElseThrow(() -> new NotFoundException());
 
+        // code smell => mau cheiro no código
+
         // aluno já matriculado?
-        if (turma.getMatriculas().stream().anyMatch(m -> m.getAluno().equals(aluno))) {
+        // if (turma.getMatriculas().stream().anyMatch(m -> m.getAluno().equals(aluno))) {
+        if (turma.estáMatriculado(aluno)) {
             throw new ServiceException("Aluno " + cpf + " já está matriculado na turma " + codigoTurma);
         }
 
         // todas as turmas do aluno
-        var turmas = turmaRepository.findByAluno(aluno);
+        // var turmas = turmaRepository.findByAluno(aluno);
+
+        Historico historico = turmaRepository.findHistorico(aluno);
 
         // aluno já fez essa disciplina?
-        if (turmas.stream().flatMap(t -> t.getMatriculas().stream())
-            .anyMatch(m -> m.getAluno().equals(aluno) && m.getSituacao().equals(Situacao.APROVADO))) {
+        // if (turmas.stream().flatMap(t -> t.getMatriculas().stream())
+        //     .anyMatch(m -> m.getAluno().equals(aluno) && m.getSituacao().equals(Situacao.APROVADO))) {
+        // if (turmas.stream().flatMap(t -> t.getMatriculas().stream())
+        //     .anyMatch(m -> m.getAluno().equals(aluno) && m.getSituacao().equals(Situacao.APROVADO))) {
+        if (historico.aprovadoEm(turma.getDisciplina())) {
             throw new ServiceException("Aluno " + cpf + " já aprovado na disciplina " + turma.getDisciplina().getNome());
         }
 

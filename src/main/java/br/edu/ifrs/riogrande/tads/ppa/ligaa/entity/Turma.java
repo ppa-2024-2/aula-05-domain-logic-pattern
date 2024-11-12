@@ -88,5 +88,11 @@ public class Turma {
                 + semestre + ", sala=" + sala + ", vagas=" + vagas + ", matriculas=" + matriculas + "]";
     }
 
+    public boolean estáMatriculado(Aluno aluno) {
+        return this.getMatriculas()
+            .stream()
+            .anyMatch(m -> m.getAluno().equals(aluno));
+    }
+
     
 }
