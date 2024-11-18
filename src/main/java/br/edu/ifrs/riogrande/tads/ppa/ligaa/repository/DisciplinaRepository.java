@@ -8,7 +8,7 @@ import java.util.Optional;
 
 import org.springframework.stereotype.Repository;
 
-import br.edu.ifrs.riogrande.tads.ppa.ligaa.entity.Disciplina;
+import br.edu.ifrs.riogrande.tads.ppa.ligaa.domain.Disciplina;
 import jakarta.annotation.PostConstruct;
 
 @Repository // stereotype (estereótipo)

@@ -1,10 +1,10 @@
-package br.edu.ifrs.riogrande.tads.ppa.ligaa.entity;
+package br.edu.ifrs.riogrande.tads.ppa.ligaa.domain;
 
 import java.util.List;
 
-import br.edu.ifrs.riogrande.tads.ppa.ligaa.entity.Matricula.Situacao;
+import br.edu.ifrs.riogrande.tads.ppa.ligaa.domain.Matricula.Situacao;
 
-// Value Object => Objeto de Valor 
+// Record => Value Object => Objeto de Valor 
 // DTO => VO => DTO
 public record Historico(Aluno aluno, List<Turma> turmas) {
 

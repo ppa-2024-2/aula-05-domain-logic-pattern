@@ -1,4 +1,4 @@
-package br.edu.ifrs.riogrande.tads.ppa.ligaa.entity;
+package br.edu.ifrs.riogrande.tads.ppa.ligaa.domain;
 
 import java.util.List;
 import java.util.ArrayList;

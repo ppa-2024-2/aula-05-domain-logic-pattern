@@ -2,10 +2,10 @@ package br.edu.ifrs.riogrande.tads.ppa.ligaa.service;
 
 import org.springframework.stereotype.Service;
 
-import br.edu.ifrs.riogrande.tads.ppa.ligaa.entity.Historico;
-import br.edu.ifrs.riogrande.tads.ppa.ligaa.entity.Matricula;
-import br.edu.ifrs.riogrande.tads.ppa.ligaa.entity.Matricula.Situacao;
-import br.edu.ifrs.riogrande.tads.ppa.ligaa.entity.Turma;
+import br.edu.ifrs.riogrande.tads.ppa.ligaa.domain.Historico;
+import br.edu.ifrs.riogrande.tads.ppa.ligaa.domain.Matricula;
+import br.edu.ifrs.riogrande.tads.ppa.ligaa.domain.Turma;
+import br.edu.ifrs.riogrande.tads.ppa.ligaa.domain.Matricula.Situacao;
 import br.edu.ifrs.riogrande.tads.ppa.ligaa.repository.AlunoRepository;
 import br.edu.ifrs.riogrande.tads.ppa.ligaa.repository.DisciplinaRepository;
 import br.edu.ifrs.riogrande.tads.ppa.ligaa.repository.ProfessorRepository;

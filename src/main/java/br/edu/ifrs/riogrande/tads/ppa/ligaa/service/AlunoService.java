@@ -1,16 +1,12 @@
 package br.edu.ifrs.riogrande.tads.ppa.ligaa.service;
 // new AlunoService()
 
-import java.time.LocalDateTime;
 import java.util.List;
-import java.util.Optional;
-import java.util.UUID;
 
-import org.springframework.beans.BeanUtils;
 import org.springframework.lang.NonNull;
 import org.springframework.stereotype.Service;
 
-import br.edu.ifrs.riogrande.tads.ppa.ligaa.entity.Aluno;
+import br.edu.ifrs.riogrande.tads.ppa.ligaa.domain.Aluno;
 import br.edu.ifrs.riogrande.tads.ppa.ligaa.repository.AlunoRepository;
 
 @Service // qualificando o objeto

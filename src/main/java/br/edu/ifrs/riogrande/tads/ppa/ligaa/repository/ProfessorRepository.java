@@ -8,7 +8,7 @@ import java.util.Optional;
 
 import org.springframework.stereotype.Repository;
 
-import br.edu.ifrs.riogrande.tads.ppa.ligaa.entity.Professor;
+import br.edu.ifrs.riogrande.tads.ppa.ligaa.domain.Professor;
 import jakarta.annotation.PostConstruct;
 
 @Repository

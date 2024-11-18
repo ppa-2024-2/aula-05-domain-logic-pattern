@@ -7,9 +7,9 @@ import java.util.Optional;
 
 import org.springframework.stereotype.Repository;
 
-import br.edu.ifrs.riogrande.tads.ppa.ligaa.entity.Aluno;
-import br.edu.ifrs.riogrande.tads.ppa.ligaa.entity.Historico;
-import br.edu.ifrs.riogrande.tads.ppa.ligaa.entity.Turma;
+import br.edu.ifrs.riogrande.tads.ppa.ligaa.domain.Aluno;
+import br.edu.ifrs.riogrande.tads.ppa.ligaa.domain.Historico;
+import br.edu.ifrs.riogrande.tads.ppa.ligaa.domain.Turma;
 
 @Repository
 public class TurmaRepository implements IRepository<Turma> {

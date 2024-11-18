@@ -10,7 +10,7 @@ import java.util.UUID;
 
 import org.springframework.stereotype.Repository;
 
-import br.edu.ifrs.riogrande.tads.ppa.ligaa.entity.Aluno;
+import br.edu.ifrs.riogrande.tads.ppa.ligaa.domain.Aluno;
 import jakarta.annotation.PostConstruct;
 
 @Repository // infraestrutura

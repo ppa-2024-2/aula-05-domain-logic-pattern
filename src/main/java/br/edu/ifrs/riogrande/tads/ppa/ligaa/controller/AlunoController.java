@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.edu.ifrs.riogrande.tads.ppa.ligaa.entity.Aluno;
-import br.edu.ifrs.riogrande.tads.ppa.ligaa.entity.Turma;
+import br.edu.ifrs.riogrande.tads.ppa.ligaa.domain.Aluno;
+import br.edu.ifrs.riogrande.tads.ppa.ligaa.domain.Turma;
 import br.edu.ifrs.riogrande.tads.ppa.ligaa.service.AlunoService;
 import br.edu.ifrs.riogrande.tads.ppa.ligaa.service.NovoAluno;
 import br.edu.ifrs.riogrande.tads.ppa.ligaa.service.TurmaService;
